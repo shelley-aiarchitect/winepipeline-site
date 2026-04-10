@@ -115,10 +115,38 @@
 <span data-en="">EN / 中文</span><span data-zh="">中文 / EN</span>
 </button>
 </nav>
-<div class="flex items-center">
-<button class="bg-[#800020] text-[#ff828a] px-6 py-2 rounded-lg font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all scale-95 duration-200">
+<div class="flex items-center gap-3">
+<button class="hidden md:block bg-[#800020] text-[#ff828a] px-6 py-2 rounded-lg font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all">
 <span data-en="">Get Started</span><span data-zh="">立即開始</span>
 </button>
+<!-- Mobile hamburger -->
+<button class="md:hidden flex flex-col gap-1.5 p-2" onclick="toggleMobileMenu()" id="hamburger">
+<span class="block w-6 h-0.5 bg-[#ffb3b5] transition-all"></span>
+<span class="block w-6 h-0.5 bg-[#ffb3b5] transition-all"></span>
+<span class="block w-6 h-0.5 bg-[#ffb3b5] transition-all"></span>
+</button>
+</div>
+</div>
+<!-- Mobile menu dropdown -->
+<div id="mobile-menu" class="hidden md:hidden glass-header border-t border-outline-variant/20">
+<div class="flex flex-col px-8 py-6 gap-5 font-['Manrope'] text-sm tracking-wide uppercase">
+<a class="text-[#e7c267] font-medium" href="#" onclick="closeMobileMenu()">
+<span data-en="">Home</span><span data-zh="">首頁</span>
+</a>
+<a class="text-[#e9e1db] font-light" href="#features" onclick="closeMobileMenu()">
+<span data-en="">Solution</span><span data-zh="">解決方案</span>
+</a>
+<a class="text-[#e9e1db] font-light" href="#pricing" onclick="closeMobileMenu()">
+<span data-en="">Pricing</span><span data-zh="">定價</span>
+</a>
+<div class="flex gap-3 pt-2">
+<button class="bg-[#800020] text-[#ff828a] px-6 py-2 rounded-lg font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all flex-1" onclick="closeMobileMenu()">
+<span data-en="">Get Started</span><span data-zh="">立即開始</span>
+</button>
+<button class="bg-surface-container-high text-[#e9e1db] px-4 py-2 rounded-full text-xs font-bold border border-outline-variant/30" onclick="toggleLanguage()">
+<span data-en="">中文</span><span data-zh="">EN</span>
+</button>
+</div>
 </div>
 </div>
 </header>
@@ -642,6 +670,15 @@
 </div>
 </footer>
 <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
         function toggleLanguage() {
             const body = document.body;
             if (body.classList.contains('lang-en')) {
