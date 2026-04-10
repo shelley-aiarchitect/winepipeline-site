@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WinePipeline | The Digital Sommelier for Global Trade</title>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f2b5d6",
+                        "surface-container-low": "#1e1b18",
+                        "surface-bright": "#3c3834",
+                        "on-secondary-fixed": "#251a00",
+                        "on-secondary-fixed-variant": "#594400",
+                        "primary": "#ffb3b5",
+                        "on-primary-fixed": "#40000b",
+                        "on-error": "#690005",
+                        "secondary-container": "#735800",
+                        "on-secondary": "#3e2e00",
+                        "surface-container-lowest": "#100e0b",
+                        "on-background": "#e9e1db",
+                        "on-tertiary-fixed-variant": "#653853",
+                        "on-primary-fixed-variant": "#8e0f28",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "background": "#161310",
+                        "surface-dim": "#161310",
+                        "outline-variant": "#584141",
+                        "surface-tint": "#ffb3b5",
+                        "primary-fixed": "#ffdada",
+                        "surface": "#161310",
+                        "tertiary-fixed": "#ffd8eb",
+                        "surface-container-high": "#2d2926",
+                        "tertiary": "#f2b5d6",
+                        "on-primary-container": "#ff828a",
+                        "on-surface-variant": "#e0bfbf",
+                        "on-tertiary-fixed": "#330d26",
+                        "surface-container": "#221f1c",
+                        "surface-variant": "#383430",
+                        "inverse-primary": "#af2b3e",
+                        "on-tertiary-container": "#d198b7",
+                        "secondary-fixed-dim": "#e7c267",
+                        "surface-container-highest": "#383430",
+                        "inverse-on-surface": "#33302c",
+                        "secondary-fixed": "#ffdf95",
+                        "outline": "#a78a8a",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#e7c267",
+                        "tertiary-container": "#5b2f4a",
+                        "inverse-surface": "#e9e1db",
+                        "on-secondary-container": "#f6d173",
+                        "on-primary": "#680018",
+                        "on-surface": "#e9e1db",
+                        "primary-fixed-dim": "#ffb3b5",
+                        "on-tertiary": "#4c223c",
+                        "primary-container": "#800020"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #161310; color: #e9e1db; min-height: max(884px, 100dvh); }
+        .serif-text { font-family: 'Noto Serif', serif; }
+        .glass-header { background: rgba(22, 19, 16, 0.8); backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Language Toggle Logic */
+        .lang-en [data-zh] { display: none !important; }
+        .lang-zh [data-en] { display: none !important; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden lang-en">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-[0_20px_40px_rgba(233,225,219,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[#ffb3b5] text-3xl mt-0.5" style="font-variation-settings: 'FILL' 1;">wine_bar</span>
+<div>
+<div class="text-2xl font-bold text-[#ffb3b5] font-['Noto_Serif'] tracking-tight leading-tight">WinePipeline</div>
+<div class="text-[10.5px] uppercase tracking-[0.12em] text-[#e9e1db] opacity-60 font-['Manrope']">by MyGrowthOS</div>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Manrope'] text-sm tracking-wide uppercase">
+<a class="text-[#e7c267] font-medium hover:text-[#ff828a] transition-colors duration-300" href="#">
+<span data-en="">Home</span><span data-zh="">首頁</span>
+</a>
+<a class="text-[#e9e1db] font-light hover:text-[#ff828a] transition-colors duration-300" href="#features">
+<span data-en="">Solution</span><span data-zh="">解決方案</span>
+</a>
+<a class="text-[#e9e1db] font-light hover:text-[#ff828a] transition-colors duration-300" href="#pricing">
+<span data-en="">Pricing</span><span data-zh="">定價</span>
+</a>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-[#e9e1db] px-3 py-1 rounded-full text-xs font-bold transition-all border border-outline-variant/30" onclick="toggleLanguage()">
+<span data-en="">EN / 中文</span><span data-zh="">中文 / EN</span>
+</button>
+</nav>
+<div class="flex items-center">
+<button class="bg-[#800020] text-[#ff828a] px-6 py-2 rounded-lg font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all scale-95 duration-200">
+<span data-en="">Get Started</span><span data-zh="">立即開始</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-[#161310] via-[#161310]/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-40" data-alt="atmospheric close up of wine cellar with vintage bottles and soft dramatic side lighting reflecting on glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG0JZTHzvife3YR570Fu49ES3wXCTihbrE6cvtc_tpEPnNJKn6KrmhFySDjOBF_g1wAZQ6NDmYVJ6plPu3-LDgzf4le5XWUhDgYU3cF-sWTZ0rP3EpbFrxviri7VaBtJf0v6G3UYVaZueMn-1Dd4vF5dvdEoD-tvWVzm5-CESBose231R-WhbOciZtQDetigPO3ZDnv8q5CoIcSMee0r0ZmCqe7_c_aQ4lVTYTTTkQwdAEFRHUzu7HTxVxejCQm4KX9hbdC0LQpD8"/>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<span class="text-[#e7c267] font-label uppercase tracking-[0.3em] text-sm mb-6 block">
+<span data-en="">CRM for Wine Trade · Regional Sales · Import Agents</span><span data-zh="">專為酒業區域銷售 · 進口代理 · 品牌大使而建</span>
+</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-tight">
+<span data-en="">Know the <span class="text-[#ffb3b5]">temperature</span> of every relationship.</span>
+<span data-zh="">掌握每段關係的<br/><span class="text-[#ffb3b5]">溫度。</span></span>
+</h1>
+<p class="font-body text-xl text-[#e9e1db]/80 mb-10 leading-relaxed max-w-xl">
+<span data-en="">WinePipeline gives wine trade professionals one dedicated place to manage distributor relationships, track follow-ups, and stay on top of every tasting event.</span>
+<span data-zh="">WinePipeline 讓酒業專業人士擁有一個專屬空間，集中管理經銷商關係、追蹤跟進，掌握每一場品酒活動。</span>
+</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-[#800020] text-[#ff828a] px-8 py-4 rounded-xl font-bold text-lg hover:brightness-125 transition-all flex items-center justify-center gap-2">
+<span data-en="">Start 7-Day Free Trial</span><span data-zh="">開始 7 天免費試用</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2">
+<span data-en="">Watch Demo</span><span data-zh="">了解如何運作</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain Points (The Problem) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-3xl md:text-5xl font-bold mb-4">
+<span data-en="">Sound familiar?</span><span data-zh="">這些情況你熟悉嗎？</span>
+</h2>
+<div class="h-1 w-24 bg-[#800020] mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-10 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">scatter_plot</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#e7c267]">
+<span data-en="">All your contacts, in one place</span><span data-zh="">所有聯絡人，集中一處</span>
+</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+<span data-en="">A simple, organised record of every distributor relationship — so nothing gets lost between meetings.</span>
+<span data-zh="">每段經銷商關係都有清晰的記錄，會議之間不再遺漏任何細節。</span>
+</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">ac_unit</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#e7c267]">
+<span data-en="">Always know who needs attention</span><span data-zh="">隨時掌握誰需要關注</span>
+</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+<span data-en="">WinePipeline quietly tracks when relationships go quiet — and reminds you before it's too late.</span>
+<span data-zh="">WinePipeline 靜靜追蹤哪些關係開始沉默，在太遲之前提醒你。</span>
+</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">event_busy</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#e7c267]">
+<span data-en="">Events that lead somewhere</span><span data-zh="">每場活動都有後續</span>
+</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+<span data-en="">From registration to follow-up, every tasting event leaves a trail you can act on.</span>
+<span data-zh="">從報名到跟進，每場品酒活動都留下清晰的記錄，讓你知道下一步怎麼做。</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Solution (Temperature Visual) -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8">
+<span data-en="">Relationship <span class="italic text-[#e7c267]">temperature,</span> at a glance.</span>
+<span data-zh="">關係溫度，<span class="italic text-[#e7c267]">一目了然。</span></span>
+</h2>
+<p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">
+<span data-en="">WinePipeline uses a simple four-stage pipeline to help you track where each distributor relationship stands — so you always know who needs attention today.</span>
+<span data-zh="">WinePipeline 用簡單的四階段管道追蹤每段經銷商關係的現狀——讓你隨時知道今天該關注誰。</span>
+</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded-lg"><span class="material-symbols-outlined text-on-primary-container">local_fire_department</span></div>
+<div>
+<span class="block font-bold text-[#ffb3b5]"><span data-en="">Hot</span><span data-zh="">熱</span></span>
+<span class="text-on-surface-variant text-sm"><span data-en="">Active relationship — follow up this week.</span><span data-zh="">關係活躍——本週跟進。</span></span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-secondary-container p-2 rounded-lg"><span class="material-symbols-outlined text-on-secondary-container">thermostat</span></div>
+<div>
+<span class="block font-bold text-[#e7c267]"><span data-en="">Warm</span><span data-zh="">暖</span></span>
+<span class="text-on-surface-variant text-sm"><span data-en="">Engaged — schedule a touchpoint soon.</span><span data-zh="">有互動——安排近期聯絡。</span></span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-tertiary-container p-2 rounded-lg"><span class="material-symbols-outlined text-on-tertiary-container">ac_unit</span></div>
+<div>
+<span class="block font-bold text-[#f2b5d6]"><span data-en="">Cool</span><span data-zh="">涼</span></span>
+<span class="text-on-surface-variant text-sm"><span data-en="">Going quiet — time to reach out.</span><span data-zh="">關係趨冷——是時候聯絡了。</span></span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-surface-variant p-2 rounded-lg"><span class="material-symbols-outlined text-on-surface-variant">nights_stay</span></div>
+<div>
+<span class="block font-bold text-on-surface-variant"><span data-en="">Cold</span><span data-zh="">冷</span></span>
+<span class="text-on-surface-variant text-sm"><span data-en="">Dormant — needs a re-engagement plan.</span><span data-zh="">關係沉默——需要重新啟動計劃。</span></span>
+</div>
+</li>
+</ul>
+</div>
+
+<!-- GHL Pipeline Kanban Illustration -->
+<div class="w-full lg:w-1/2">
+<div class="bg-surface-container rounded-2xl border border-outline-variant/10 overflow-hidden shadow-2xl">
+<!-- Pipeline header -->
+<div class="bg-surface-container-high px-5 py-3 flex items-center gap-2 border-b border-outline-variant/10">
+<div class="w-3 h-3 rounded-full bg-[#800020]"></div>
+<div class="w-3 h-3 rounded-full bg-[#735800]"></div>
+<div class="w-3 h-3 rounded-full bg-surface-bright"></div>
+<span class="ml-3 text-xs text-on-surface-variant font-['Manrope'] uppercase tracking-wider"><span data-en="">Distributor Pipeline · WinePipeline</span><span data-zh="">經銷商管道 · WinePipeline</span></span>
+</div>
+<!-- Kanban columns -->
+<div class="p-4 grid grid-cols-4 gap-3 overflow-x-auto">
+
+<!-- Hot column -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-[#800020] inline-block"></span>
+<span class="text-[10px] uppercase tracking-wider text-[#ffb3b5] font-bold"><span data-en="">Hot</span><span data-zh="">熱</span></span>
+<span class="ml-auto text-[10px] text-on-surface-variant">2</span>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Vignobles & Sons</span><span data-zh="">金灣酒業</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">2h ago</span><span data-zh="">2小時前</span></div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Grand Cru HK</span><span data-zh="">宏圖酒業</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">1d ago</span><span data-zh="">1天前</span></div>
+</div>
+</div>
+</div>
+
+<!-- Warm column -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-[#735800] inline-block"></span>
+<span class="text-[10px] uppercase tracking-wider text-[#e7c267] font-bold"><span data-en="">Warm</span><span data-zh="">暖</span></span>
+<span class="ml-auto text-[10px] text-on-surface-variant">3</span>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Alpine Dist.</span><span data-zh="">阿爾卑斯貿易</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">4d ago</span><span data-zh="">4天前</span></div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Pearl River Co.</span><span data-zh="">珠江貿易</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">6d ago</span><span data-zh="">6天前</span></div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Terroir Asia</span><span data-zh="">亞洲風土</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">8d ago</span><span data-zh="">8天前</span></div>
+</div>
+</div>
+</div>
+
+<!-- Cool column -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-[#5b2f4a] inline-block"></span>
+<span class="text-[10px] uppercase tracking-wider text-[#f2b5d6] font-bold"><span data-en="">Cool</span><span data-zh="">涼</span></span>
+<span class="ml-auto text-[10px] text-on-surface-variant">2</span>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Northern Terroir</span><span data-zh="">北方風土</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">18d ago</span><span data-zh="">18天前</span></div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a]">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Silk Road Wines</span><span data-zh="">絲路酒業</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">22d ago</span><span data-zh="">22天前</span></div>
+</div>
+</div>
+</div>
+
+<!-- Cold column -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-surface-bright inline-block"></span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold"><span data-en="">Cold</span><span data-zh="">冷</span></span>
+<span class="ml-auto text-[10px] text-on-surface-variant">1</span>
+</div>
+<div class="space-y-2">
+<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-surface-bright opacity-60">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Horizon Imports</span><span data-zh="">地平線進口</span></div>
+<div class="text-[10px] text-on-surface-variant"><span data-en="">45d ago</span><span data-zh="">45天前</span></div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- Footer note -->
+<div class="px-5 py-3 border-t border-outline-variant/10 flex items-center gap-2">
+<span class="material-symbols-outlined text-[#e7c267] text-sm">notifications</span>
+<span class="text-[11px] text-on-surface-variant"><span data-en="">2 contacts have gone quiet — reminder sent</span><span data-zh="">2 個聯絡人已沉默——已發送提醒</span></span>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 bg-surface" id="features">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold mb-16 text-center">
+<span data-en="">Built for the Nuances of Wine</span><span data-zh="">酒業銷售專業人士真正需要的一切</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+<!-- Feature 1 -->
+<div class="md:col-span-3 bg-surface-container p-10 rounded-3xl">
+<span class="material-symbols-outlined text-[#ffb3b5] text-4xl mb-6">plumbing</span>
+<h3 class="font-headline text-2xl mb-4 text-[#e7c267]">
+<span data-en="">Distributor Pipeline</span><span data-zh="">經銷商管道追蹤</span>
+</h3>
+<p class="font-body text-on-surface-variant">
+<span data-en="">Visualise your entire sales funnel from initial sampling to signed distribution agreements across global markets.</span>
+<span data-zh="">追蹤每個經銷商在銷售流程中的階段。清楚看到誰在活躍、誰停滯了、誰今天需要一通電話。</span>
+</p>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-3 bg-surface-container p-10 rounded-3xl">
+<span class="material-symbols-outlined text-[#ffb3b5] text-4xl mb-6">celebration</span>
+<h3 class="font-headline text-2xl mb-4 text-[#e7c267]">
+<span data-en="">Event &amp; Tasting Management</span><span data-zh="">活動與品酒會管理</span>
+</h3>
+<p class="font-body text-on-surface-variant">
+<span data-en="">Seamlessly manage RSVPs, tasting notes, and follow-ups for trade shows like ProWine or Vinexpo.</span>
+<span data-zh="">在同一個地方管理報名、出席和活動後跟進。酒展後再也不會遺失任何聯絡人。</span>
+</p>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-2 bg-surface-container p-10 rounded-3xl">
+<span class="material-symbols-outlined text-[#ffb3b5] text-4xl mb-6">notifications_active</span>
+<h4 class="font-headline text-xl mb-2 text-[#e7c267]">
+<span data-en="">Smart Reminders</span><span data-zh="">智能跟進提醒</span>
+</h4>
+<p class="font-body text-sm text-on-surface-variant">
+<span data-en="">Intelligent alerts that prompt you to re-engage right as a relationship begins to cool.</span>
+<span data-zh="">系統告訴你某段關係正在降溫。你決定如何聯絡——電話、拜訪，還是一封私人便條。</span>
+</p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-2 bg-surface-container p-10 rounded-3xl">
+<span class="material-symbols-outlined text-[#ffb3b5] text-4xl mb-6">history_edu</span>
+<h4 class="font-headline text-xl mb-2 text-[#e7c267]">
+<span data-en="">Contact History</span><span data-zh="">聯絡記錄與備註</span>
+</h4>
+<p class="font-body text-sm text-on-surface-variant">
+<span data-en="">A unified timeline of every email, meeting, and bottle sampled by each partner.</span>
+<span data-zh="">每次對話、品酒筆記和業務細節都記錄在每個聯絡人下。你的關係知識，永遠不會消失。</span>
+</p>
+</div>
+<!-- Feature 5 -->
+<div class="md:col-span-2 bg-surface-container p-10 rounded-3xl">
+<span class="material-symbols-outlined text-[#ffb3b5] text-4xl mb-6">file_export</span>
+<h4 class="font-headline text-xl mb-2 text-[#e7c267]">
+<span data-en="">Data Export</span><span data-zh="">你的數據，永遠屬於你</span>
+</h4>
+<p class="font-body text-sm text-on-surface-variant">
+<span data-en="">Export clean, formatted reports for board meetings or internal sales analysis with one click.</span>
+<span data-zh="">隨時匯出你的聯絡人。沒有鎖定。你的經銷商關係屬於你，不屬於我們。</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section class="py-24 bg-surface-container-lowest" id="pricing">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-bold mb-4">
+<span data-en="">Investment in Infrastructure</span><span data-zh="">簡單定價。沒有隱藏收費。</span>
+</h2>
+<p class="text-on-surface-variant">
+<span data-en="">Start with a 7-day free trial. No credit card required.</span><span data-zh="">從 7 天免費試用開始。無需信用卡。隨時取消。</span>
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+
+<!-- Tier 1: CRM Only + Add-on -->
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/10">
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">
+<span data-en="">Starter</span><span data-zh="">入門方案</span>
+</div>
+<h3 class="font-headline text-2xl mb-2"><span data-en="">CRM Only</span><span data-zh="">純 CRM</span></h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-4xl font-bold text-[#e7c267]">$99</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-6 italic">
+<span data-en="">7-day free trial included</span><span data-zh="">包含 7 天免費試用</span>
+</p>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Distributor pipeline & contacts</span><span data-zh="">經銷商管道與聯絡人管理</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Relationship temperature tracking</span><span data-zh="">關係溫度追蹤</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Follow-up reminders</span><span data-zh="">跟進提醒</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Contact history & notes</span><span data-zh="">聯絡記錄與備註</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Data export anytime</span><span data-zh="">隨時匯出數據</span></li>
+</ul>
+
+<!-- Add-on toggle -->
+<div class="border border-[#e7c267]/30 rounded-xl p-4 mb-6 bg-surface-container">
+<label class="flex items-start gap-3 cursor-pointer">
+<input type="checkbox" id="addon-event" class="mt-1 accent-[#e7c267]" onchange="updateCheckout()">
+<div>
+<div class="font-bold text-sm text-[#e7c267]">
+<span data-en="">✦ Add Event Management</span><span data-zh="">✦ 加購活動管理模組</span>
+</div>
+<div class="text-xs text-on-surface-variant mt-1">
+<span data-en="">Tasting registrations, attendance, post-event follow-up</span><span data-zh="">品酒報名、出席追蹤、活動後跟進</span>
+</div>
+<div class="text-sm font-bold text-[#ffb3b5] mt-2">+ $30 / mo</div>
+</div>
+</label>
+</div>
+
+<button id="starter-cta" onclick="goToCheckout()" class="w-full py-4 rounded-xl font-bold border border-outline hover:bg-surface-variant transition-all text-sm">
+<span data-en="">Start Free Trial — $99/mo</span><span data-zh="">開始免費試用 — $99/月</span>
+</button>
+<p id="addon-note" class="text-xs text-center text-[#e7c267] mt-2 hidden">
+<span data-en="">Total: $129/mo with Event Management</span><span data-zh="">合計：$129/月（含活動管理）</span>
+</p>
+</div>
+
+<!-- Tier 2: 6-Month HERO -->
+<div class="bg-surface-container p-12 rounded-3xl border-2 border-[#800020] relative transform md:scale-110 shadow-2xl z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#800020] text-[#ffb3b5] px-6 py-1 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+<span data-en="">Best Value</span><span data-zh="">最超值</span>
+</div>
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">
+<span data-en="">Committed · 6 Months</span><span data-zh="">長期方案 · 6 個月</span>
+</div>
+<h3 class="font-headline text-2xl mb-2"><span data-en="">CRM + Events + Blueprint</span><span data-zh="">CRM + 活動 + Blueprint</span></h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-5xl font-bold text-[#ffb3b5]">$499</span>
+<span class="text-on-surface-variant">/6-mo</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-6 italic">
+<span data-en="">Save $275 vs monthly · billed once</span><span data-zh="">比月付省 $275 · 一次付清</span>
+</p>
+<ul class="space-y-3 mb-8">
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5]">check</span><span data-en="">Everything in Starter</span><span data-zh="">入門方案所有功能</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5]">check</span><span data-en="">Event Management Suite</span><span data-zh="">活動與品酒會管理</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5]">check</span><span data-en="">Advanced reporting</span><span data-zh="">進階數據報告</span></li>
+<li class="flex gap-2 text-[#e7c267]"><span class="material-symbols-outlined text-[#e7c267]">star</span><span data-en=""><strong>Blueprint Library unlocked</strong> — B2B, B2C & channel workflow templates built inside your system</span><span data-zh=""><strong>解鎖 Blueprint 資料庫</strong>——B2B、B2C 及渠道工作流程模板，直接建在你的系統裡</span></li>
+<li class="flex gap-2 text-[#e7c267]"><span class="material-symbols-outlined text-[#e7c267]">star</span><span data-en="">Priority onboarding support</span><span data-zh="">優先入門支援</span></li>
+</ul>
+<button class="w-full py-4 rounded-xl font-bold bg-[#800020] text-[#ff828a] hover:brightness-110 transition-all shadow-lg">
+<span data-en="">Start Free Trial</span><span data-zh="">開始免費試用</span>
+</button>
+</div>
+
+<!-- Tier 3: Enterprise -->
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/10">
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Enterprise</div>
+<h3 class="font-headline text-2xl mb-2"><span data-en="">Custom Scale</span><span data-zh="">企業方案</span></h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-4xl font-bold text-[#e7c267]">$1,399</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<p class="text-xs text-on-surface-variant mb-6 italic">
+<span data-en="">For large teams & regional importers</span><span data-zh="">適合大型團隊及區域進口商</span>
+</p>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Everything in 6-Month plan</span><span data-zh="">6 個月方案所有功能</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Multi-user team access</span><span data-zh="">多用戶團隊使用</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Custom workflow build-out</span><span data-zh="">客製化工作流程建置</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Dedicated onboarding & training</span><span data-zh="">專屬入門培訓</span></li>
+<li class="flex gap-2"><span class="material-symbols-outlined text-[#ffb3b5] text-sm">check</span><span data-en="">Priority support & SLA</span><span data-zh="">優先支援及服務承諾</span></li>
+</ul>
+<a href="mailto:hello@mygrowthos.com" class="w-full py-4 rounded-xl font-bold border border-[#e7c267]/40 text-[#e7c267] hover:bg-surface-variant transition-all text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span data-en="">Contact Sales</span><span data-zh="">聯絡銷售團隊</span>
+</a>
+</div>
+
+</div>
+<p class="text-center text-xs text-on-surface-variant mt-8">
+<span data-en="">All plans include a 7-day free trial · No credit card required to start · Cancel anytime</span>
+<span data-zh="">所有方案均包含 7 天免費試用 · 開始無需信用卡 · 隨時取消</span>
+</p>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-24 bg-surface">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="font-headline text-3xl font-bold mb-12 text-center tracking-tight">
+<span data-en="">Sommelier Support</span><span data-zh="">常見問題</span>
+</h2>
+<div class="space-y-4">
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/5">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center group faq-toggle">
+<span class="font-bold text-[#e7c267]">
+<span data-en="">Is WinePipeline built specifically for the wine trade?</span><span data-zh="">WinePipeline 是為誰而建的？</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-[#ffb3b5] transition-colors faq-icon">add</span>
+</button>
+<div class="faq-answer hidden px-8 pb-6 text-on-surface-variant leading-relaxed">
+<span data-en="">Yes. WinePipeline is designed exclusively for wine trade professionals — regional sales managers, import agents, and brand ambassadors who manage distributor networks across Hong Kong, Asia, and globally. Every workflow speaks the language of wine.</span>
+<span data-zh="">是的。WinePipeline 專為酒業專業人士設計——包括區域銷售經理、進口代理商和品牌大使，管理香港、亞洲及全球的經銷商網絡。每個工作流程都懂酒業語言。</span>
+</div>
+</div>
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/5">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center group faq-toggle">
+<span class="font-bold text-[#e7c267]">
+<span data-en="">How secure is my proprietary distributor data?</span><span data-zh="">我的數據存儲在哪裡？</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-[#ffb3b5] transition-colors faq-icon">add</span>
+</button>
+<div class="faq-answer hidden px-8 pb-6 text-on-surface-variant leading-relaxed">
+<span data-en="">Your data lives in your own dedicated account. You can export all your contacts at any time in CSV format. We will never share or use your data for any other purpose. Your distributor relationships belong to you.</span>
+<span data-zh="">你的數據存儲在你專屬的帳戶中。你可以隨時以 CSV 格式匯出所有聯絡人。我們永遠不會分享或將你的數據用於其他目的。你的經銷商關係屬於你。</span>
+</div>
+</div>
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/5">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center group faq-toggle">
+<span class="font-bold text-[#e7c267]">
+<span data-en="">What is the Blueprint Library?</span><span data-zh="">Blueprint 資料庫是什麼？</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-[#ffb3b5] transition-colors faq-icon">add</span>
+</button>
+<div class="faq-answer hidden px-8 pb-6 text-on-surface-variant leading-relaxed">
+<span data-en="">The Blueprint Library is a collection of pre-built workflow templates for B2B sales, B2C customer management, and channel distribution — all built directly inside your WinePipeline system. It's unlocked for 6-month plan subscribers and gives you a head start on building your sales process.</span>
+<span data-zh="">Blueprint 資料庫是一系列預建的工作流程模板，涵蓋 B2B 銷售、B2C 客戶管理和渠道分銷——全部直接建在你的 WinePipeline 系統裡。6 個月方案訂閱者可解鎖，讓你在建立銷售流程時搶先一步。</span>
+</div>
+</div>
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/5">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center group faq-toggle">
+<span class="font-bold text-[#e7c267]">
+<span data-en="">Can I cancel my subscription anytime?</span><span data-zh="">我可以隨時取消嗎？</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-[#ffb3b5] transition-colors faq-icon">add</span>
+</button>
+<div class="faq-answer hidden px-8 pb-6 text-on-surface-variant leading-relaxed">
+<span data-en="">Yes. Monthly plans can be cancelled anytime with no penalty. For 6-month plans, the full period is billed upfront, but you can export your data and leave at any time.</span>
+<span data-zh="">可以。月付方案可以隨時取消，無需罰款。6 個月方案為預付全期費用，但你可以隨時匯出數據並離開。</span>
+</div>
+</div>
+
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/5">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center group faq-toggle">
+<span class="font-bold text-[#e7c267]">
+<span data-en="">How long does setup take?</span><span data-zh="">設置需要多長時間？</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-[#ffb3b5] transition-colors faq-icon">add</span>
+</button>
+<div class="faq-answer hidden px-8 pb-6 text-on-surface-variant leading-relaxed">
+<span data-en="">Most users are up and running within a day. We handle your initial setup and onboarding personally. You focus on your relationships — we handle the system.</span>
+<span data-zh="">大多數用戶在一天內就能上手運行。我們親自處理你的初始設置和入門培訓。你專注於你的關係——我們負責系統。</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="overhead shot of a minimalist tasting table with premium wine glasses and notes in a luxury setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA56Cn-YKBxFwMaZSHEgPsCxp6yFgNCATnXeE_iXKLqIu-jeGxxyBm7kRz3fE8P890nYooyjx4anvYQ7GKx3NsSCKiTySUQmuc2T5RLNsV6coPRI1aNz4yrhP6yhpAgnkN8_qJviq3b4o8uIbWx95SDAc_pgvl18vf0vWBbZKNZXyWwMU_Y6tfMXaOioQP0nQYYFzt9VPDkpXNMvaEpiDuF__w-keeBH8pLMPE3daRFwDpt1HkFc5SCf9QPN9Sk-UWNrj2puxiyWCM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#161310] to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center px-8">
+<h2 class="font-headline text-4xl md:text-6xl font-bold mb-8">
+<span data-en="">Refine your relationship management.</span><span data-zh="">你的下一通經銷商電話，從知道該打給誰開始。</span>
+</h2>
+<p class="font-body text-xl text-on-surface-variant mb-12">
+<span data-en="">Join elite wineries and exporters using WinePipeline to scale their global presence.</span><span data-zh="">今天開始你的 7 天免費試用。無需信用卡。專為全球酒業專業人士而建。</span>
+</p>
+<button class="bg-[#800020] text-[#ff828a] px-12 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl">
+<span data-en="">Start Your Free 7-Day Trial</span><span data-zh="">開始免費試用 — 7 天免費</span>
+</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1e1b18] w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-serif text-[#ffb3b5]">WinePipeline</span>
+<p class="font-['Manrope'] text-sm tracking-wide uppercase text-[#e9e1db]/60">
+<span data-en="">© 2026 WinePipeline · MyGrowthOS · AuraStudio. All rights reserved.</span><span data-zh="">© 2026 WinePipeline · MyGrowthOS · 華緻數位工作室。版權所有。</span>
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Manrope'] text-sm tracking-wide uppercase text-[#e9e1db]/60">
+<a class="hover:text-[#e7c267] transition-all" href="#"><span data-en="">Privacy Policy</span><span data-zh="">隱私政策</span></a>
+<a class="hover:text-[#e7c267] transition-all" href="#"><span data-en="">Terms of Service</span><span data-zh="">服務條款</span></a>
+<a class="hover:text-[#e7c267] transition-all" href="#"><span data-en="">Contact Support</span><span data-zh="">聯絡支援</span></a>
+<button class="text-[#ffb3b5] hover:text-[#e7c267] transition-all uppercase" onclick="toggleLanguage()">
+<span data-en="">EN / ZH</span><span data-zh="">ZH / EN</span>
+</button>
+</div>
+</div>
+</footer>
+<script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('lang-en')) {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+            } else {
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+            }
+        }
+
+        // Auto language from URL
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        if (urlLang === 'zh') {
+            document.body.classList.remove('lang-en');
+            document.body.classList.add('lang-zh');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = !answer.classList.contains('hidden');
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.textContent = 'add');
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.textContent = 'remove';
+                }
+            });
+        });
+
+        // Add-on checkout logic
+        const CRM_ONLY_URL = '#ghl-checkout-99';       // replace with GHL order form URL
+        const CRM_EVENT_URL = '#ghl-checkout-129';      // replace with GHL order form URL
+
+        function updateCheckout() {
+            const addon = document.getElementById('addon-event');
+            const btn = document.getElementById('starter-cta');
+            const note = document.getElementById('addon-note');
+            const isEn = document.body.classList.contains('lang-en');
+            if (addon.checked) {
+                btn.innerHTML = isEn
+                    ? 'Start Free Trial — $129/mo'
+                    : '開始免費試用 — $129/月';
+                note.classList.remove('hidden');
+            } else {
+                btn.innerHTML = isEn
+                    ? 'Start Free Trial — $99/mo'
+                    : '開始免費試用 — $99/月';
+                note.classList.add('hidden');
+            }
+        }
+
+        function goToCheckout() {
+            const addon = document.getElementById('addon-event');
+            window.location.href = addon.checked ? CRM_EVENT_URL : CRM_ONLY_URL;
+        }
+    </script>
+</body></html>
