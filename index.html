@@ -3,10 +3,31 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WinePipeline | The Digital Sommelier for Global Trade</title>
+<title>WinePipeline — Relationship CRM for Wine Trade Professionals</title>
+
+<!-- SEO -->
+<meta name="description" content="WinePipeline helps wine trade professionals manage distributor relationships, track follow-ups, and stay on top of every tasting event. Built for regional sales, import agents and brand ambassadors across Asia.">
+<meta name="keywords" content="wine CRM, distributor management, wine trade software, relationship management, tasting event management, wine industry CRM, Hong Kong wine, Asia wine trade">
+<meta name="author" content="MyGrowthOS">
+<link rel="canonical" href="https://winepipeline.mygrowthos.com">
+
+<!-- Open Graph (WhatsApp, LinkedIn, Facebook preview) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://winepipeline.mygrowthos.com">
+<meta property="og:title" content="WinePipeline — Know the temperature of every relationship.">
+<meta property="og:description" content="One dedicated place to manage distributor relationships, track follow-ups, and stay on top of every tasting event. Built for wine trade professionals.">
+<meta property="og:image" content="https://winepipeline.mygrowthos.com/og-image.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WinePipeline — CRM for Wine Trade">
+<meta name="twitter:description" content="Manage distributor relationships, track follow-ups, and stay on top of every tasting event.">
+<meta name="twitter:image" content="https://winepipeline.mygrowthos.com/og-image.jpg">
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH8LEMFS5X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TH8LEMFS5X');</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -276,7 +297,7 @@
 
 <!-- GHL Pipeline Kanban Illustration -->
 <div class="w-full lg:w-1/2">
-<div class="bg-surface-container rounded-2xl border border-outline-variant/10 overflow-hidden shadow-2xl">
+<div class="bg-surface-container rounded-2xl border border-outline-variant/10 overflow-hidden shadow-2xl" id="kanban-board">
 <!-- Pipeline header -->
 <div class="bg-surface-container-high px-5 py-3 flex items-center gap-2 border-b border-outline-variant/10">
 <div class="w-3 h-3 rounded-full bg-[#800020]"></div>
@@ -285,21 +306,21 @@
 <span class="ml-3 text-xs text-on-surface-variant font-['Manrope'] uppercase tracking-wider"><span data-en="">Distributor Pipeline · WinePipeline</span><span data-zh="">經銷商管道 · WinePipeline</span></span>
 </div>
 <!-- Kanban columns -->
-<div class="p-4 grid grid-cols-4 gap-3 overflow-x-auto">
+<div class="p-4 grid grid-cols-4 gap-3 overflow-x-auto relative">
 
 <!-- Hot column -->
-<div>
+<div id="col-hot">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-2 h-2 rounded-full bg-[#800020] inline-block"></span>
 <span class="text-[10px] uppercase tracking-wider text-[#ffb3b5] font-bold"><span data-en="">Hot</span><span data-zh="">熱</span></span>
-<span class="ml-auto text-[10px] text-on-surface-variant">2</span>
+<span class="ml-auto text-[10px] text-on-surface-variant" id="hot-count">2</span>
 </div>
-<div class="space-y-2">
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020]">
+<div class="space-y-2" id="hot-cards">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Vignobles & Sons</span><span data-zh="">金灣酒業</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">2h ago</span><span data-zh="">2小時前</span></div>
 </div>
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020]">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Grand Cru HK</span><span data-zh="">宏圖酒業</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">1d ago</span><span data-zh="">1天前</span></div>
 </div>
@@ -307,41 +328,41 @@
 </div>
 
 <!-- Warm column -->
-<div>
+<div id="col-warm">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-2 h-2 rounded-full bg-[#735800] inline-block"></span>
 <span class="text-[10px] uppercase tracking-wider text-[#e7c267] font-bold"><span data-en="">Warm</span><span data-zh="">暖</span></span>
-<span class="ml-auto text-[10px] text-on-surface-variant">3</span>
+<span class="ml-auto text-[10px] text-on-surface-variant" id="warm-count">3</span>
 </div>
-<div class="space-y-2">
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="space-y-2" id="warm-cards">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Alpine Dist.</span><span data-zh="">阿爾卑斯貿易</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">4d ago</span><span data-zh="">4天前</span></div>
 </div>
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Pearl River Co.</span><span data-zh="">珠江貿易</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">6d ago</span><span data-zh="">6天前</span></div>
 </div>
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800]">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#735800] transition-all duration-300" id="drag-card">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Terroir Asia</span><span data-zh="">亞洲風土</span></div>
-<div class="text-[10px] text-on-surface-variant"><span data-en="">8d ago</span><span data-zh="">8天前</span></div>
+<div class="text-[10px] text-on-surface-variant" id="drag-card-time"><span data-en="">8d ago</span><span data-zh="">8天前</span></div>
 </div>
 </div>
 </div>
 
 <!-- Cool column -->
-<div>
+<div id="col-cool">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-2 h-2 rounded-full bg-[#5b2f4a] inline-block"></span>
 <span class="text-[10px] uppercase tracking-wider text-[#f2b5d6] font-bold"><span data-en="">Cool</span><span data-zh="">涼</span></span>
-<span class="ml-auto text-[10px] text-on-surface-variant">2</span>
+<span class="ml-auto text-[10px] text-on-surface-variant" id="cool-count">2</span>
 </div>
-<div class="space-y-2">
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a]">
+<div class="space-y-2" id="cool-cards">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Northern Terroir</span><span data-zh="">北方風土</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">18d ago</span><span data-zh="">18天前</span></div>
 </div>
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a]">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-[#5b2f4a] transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Silk Road Wines</span><span data-zh="">絲路酒業</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">22d ago</span><span data-zh="">22天前</span></div>
 </div>
@@ -349,28 +370,43 @@
 </div>
 
 <!-- Cold column -->
-<div>
+<div id="col-cold">
 <div class="flex items-center gap-2 mb-3">
 <span class="w-2 h-2 rounded-full bg-surface-bright inline-block"></span>
 <span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold"><span data-en="">Cold</span><span data-zh="">冷</span></span>
-<span class="ml-auto text-[10px] text-on-surface-variant">1</span>
+<span class="ml-auto text-[10px] text-on-surface-variant" id="cold-count">1</span>
 </div>
-<div class="space-y-2">
-<div class="bg-surface-container-high rounded-lg p-3 border-l-2 border-surface-bright opacity-60">
+<div class="space-y-2" id="cold-cards">
+<div class="kanban-card bg-surface-container-high rounded-lg p-3 border-l-2 border-surface-bright opacity-60 transition-all duration-300">
 <div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Horizon Imports</span><span data-zh="">地平線進口</span></div>
 <div class="text-[10px] text-on-surface-variant"><span data-en="">45d ago</span><span data-zh="">45天前</span></div>
 </div>
 </div>
 </div>
 
+<!-- Ghost drag card -->
+<div id="ghost-card" class="absolute hidden bg-surface-container-high rounded-lg p-3 border-l-2 border-[#800020] shadow-2xl z-50 pointer-events-none" style="width:calc(25% - 16px);opacity:0.92;">
+<div class="text-xs font-bold text-on-surface mb-1"><span data-en="">Terroir Asia</span><span data-zh="">亞洲風土</span></div>
+<div class="text-[10px] text-[#ffb3b5]"><span data-en="">→ Hot</span><span data-zh="">→ 熱欄</span></div>
+</div>
+
 </div>
 <!-- Footer note -->
 <div class="px-5 py-3 border-t border-outline-variant/10 flex items-center gap-2">
 <span class="material-symbols-outlined text-[#e7c267] text-sm">notifications</span>
-<span class="text-[11px] text-on-surface-variant"><span data-en="">2 contacts have gone quiet — reminder sent</span><span data-zh="">2 個聯絡人已沉默——已發送提醒</span></span>
+<span class="text-[11px] text-on-surface-variant" id="kanban-notice"><span data-en="">2 contacts have gone quiet — reminder sent</span><span data-zh="">2 個聯絡人已沉默——已發送提醒</span></span>
 </div>
 </div>
 </div>
+
+<style>
+@keyframes kpulse-hot{0%,100%{box-shadow:0 0 0 0 rgba(255,182,193,0);}50%{box-shadow:0 0 0 1px rgba(255,182,193,0.95);}}
+@keyframes kpulse-warm{0%,100%{box-shadow:0 0 0 0 rgba(255,182,193,0);}50%{box-shadow:0 0 0 1px rgba(255,182,193,0.95);}}
+@keyframes kpulse-cool{0%,100%{box-shadow:0 0 0 0 rgba(255,182,193,0);}50%{box-shadow:0 0 0 1px rgba(255,182,193,0.95);}}
+.khl-hot{animation:kpulse-hot 1.2s ease 3;background:rgba(255,182,193,0.06)!important;}
+.khl-warm{animation:kpulse-warm 1.2s ease 3;background:rgba(255,182,193,0.06)!important;}
+.khl-cool{animation:kpulse-cool 1.2s ease 3;background:rgba(255,182,193,0.06)!important;}
+</style>
 
 </div>
 </section>
@@ -520,9 +556,9 @@
 <li class="flex gap-2 text-[#e7c267]"><span class="material-symbols-outlined text-[#e7c267]">star</span><span data-en=""><strong>Blueprint Library unlocked</strong> — B2B, B2C & channel workflow templates built inside your system</span><span data-zh=""><strong>解鎖 Blueprint 資料庫</strong>——B2B、B2C 及渠道工作流程模板，直接建在你的系統裡</span></li>
 <li class="flex gap-2 text-[#e7c267]"><span class="material-symbols-outlined text-[#e7c267]">star</span><span data-en="">Priority onboarding support</span><span data-zh="">優先入門支援</span></li>
 </ul>
-<button class="w-full py-4 rounded-xl font-bold bg-[#800020] text-[#ff828a] hover:brightness-110 transition-all shadow-lg">
+<a href="https://link.fastpaydirect.com/payment-link/69dc7475557558e89e51f120" class="w-full py-4 rounded-xl font-bold bg-[#800020] text-[#ff828a] hover:brightness-110 transition-all shadow-lg flex items-center justify-center">
 <span data-en="">Start Free Trial</span><span data-zh="">開始免費試用</span>
-</button>
+</a>
 </div>
 
 <!-- Tier 3: Enterprise -->
@@ -551,8 +587,8 @@
 
 </div>
 <p class="text-center text-xs text-on-surface-variant mt-8">
-<span data-en="">All plans include a 7-day free trial · No credit card required to start · Cancel anytime</span>
-<span data-zh="">所有方案均包含 7 天免費試用 · 開始無需信用卡 · 隨時取消</span>
+<span data-en="">All plans include a 7-day free trial · No credit card required to start · Cancel anytime · <a href="https://winepipeline.mygrowthos.com/terms" class="text-[#ffb3b5] hover:underline">Terms of Service</a></span>
+<span data-zh="">所有方案均包含 7 天免費試用 · 開始無需信用卡 · 隨時取消 · <a href="https://winepipeline.mygrowthos.com/terms" class="text-[#ffb3b5] hover:underline">服務條款</a></span>
 </p>
 </div>
 </section>
@@ -645,9 +681,9 @@
 <p class="font-body text-xl text-on-surface-variant mb-12">
 <span data-en="">Join elite wineries and exporters using WinePipeline to scale their global presence.</span><span data-zh="">今天開始你的 7 天免費試用。無需信用卡。專為全球酒業專業人士而建。</span>
 </p>
-<button class="bg-[#800020] text-[#ff828a] px-12 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl">
+<a href="https://link.fastpaydirect.com/payment-link/69dc70f780425dc02fbc7526" class="bg-[#800020] text-[#ff828a] px-12 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl inline-block">
 <span data-en="">Start Your Free 7-Day Trial</span><span data-zh="">開始免費試用 — 7 天免費</span>
-</button>
+</a>
 </div>
 </section>
 <!-- Footer -->
@@ -713,8 +749,8 @@
         });
 
         // Add-on checkout logic
-        const CRM_ONLY_URL = '#ghl-checkout-99';       // replace with GHL order form URL
-        const CRM_EVENT_URL = '#ghl-checkout-129';      // replace with GHL order form URL
+        const CRM_ONLY_URL = 'https://link.fastpaydirect.com/payment-link/69dc70f780425dc02fbc7526';
+        const CRM_EVENT_URL = 'https://link.fastpaydirect.com/payment-link/69dc743180425dc02fbc752b';
 
         function updateCheckout() {
             const addon = document.getElementById('addon-event');
@@ -733,6 +769,77 @@
                 note.classList.add('hidden');
             }
         }
+
+        // Kanban animation
+        (function() {
+          let running = false;
+          function runAnim() {
+            if (running) return;
+            running = true;
+            const cols = ['hot-cards','warm-cards','cool-cards'];
+            const cls = ['khl-hot','khl-warm','khl-cool'];
+            let step = 0;
+            function highlight() {
+              if (step < cols.length) {
+                document.querySelectorAll('#'+cols[step]+' .kanban-card').forEach(c=>{
+                  c.classList.add(cls[step]);
+                  setTimeout(()=>c.classList.remove(cls[step]),3600);
+                });
+                step++;
+                setTimeout(highlight, 1800);
+              } else { setTimeout(doDrag, 600); }
+            }
+            function doDrag() {
+              const board = document.getElementById('kanban-board');
+              const ghost = document.getElementById('ghost-card');
+              const dragCard = document.getElementById('drag-card');
+              const warmCards = document.getElementById('warm-cards');
+              const hotCards = document.getElementById('hot-cards');
+              const notice = document.getElementById('kanban-notice');
+              if (!board||!ghost||!dragCard) { running=false; return; }
+              const br = board.getBoundingClientRect();
+              const dr = dragCard.getBoundingClientRect();
+              const hr = document.getElementById('col-hot').getBoundingClientRect();
+              ghost.style.cssText = `left:${dr.left-br.left}px;top:${dr.top-br.top}px;display:block;transition:none;`;
+              dragCard.style.opacity='0.25';
+              setTimeout(()=>{
+                ghost.style.transition='left 0.85s cubic-bezier(0.4,0,0.2,1),top 0.85s cubic-bezier(0.4,0,0.2,1),transform 0.85s ease';
+                ghost.style.left=(hr.left-br.left)+'px';
+                ghost.style.top=(dr.top-br.top-8)+'px';
+                ghost.style.transform='rotate(-2deg) scale(1.04)';
+              },80);
+              setTimeout(()=>{
+                ghost.style.display='none';
+                dragCard.style.opacity='1';
+                dragCard.classList.remove('border-[#735800]');
+                dragCard.classList.add('border-[#800020]','khl-hot');
+                dragCard.querySelector('#drag-card-time').innerHTML='<span data-en="">just now</span><span data-zh="">剛剛</span>';
+                warmCards.removeChild(dragCard);
+                hotCards.appendChild(dragCard);
+                document.getElementById('hot-count').textContent='3';
+                document.getElementById('warm-count').textContent='2';
+                notice.innerHTML='<span data-en="">Terroir Asia moved to Hot ✓</span><span data-zh="">亞洲風土已移至熱欄 ✓</span>';
+                setTimeout(()=>{
+                  dragCard.classList.remove('khl-hot','border-[#800020]');
+                  dragCard.classList.add('border-[#735800]');
+                  dragCard.querySelector('#drag-card-time').innerHTML='<span data-en="">8d ago</span><span data-zh="">8天前</span>';
+                  hotCards.removeChild(dragCard);
+                  warmCards.appendChild(dragCard);
+                  document.getElementById('hot-count').textContent='2';
+                  document.getElementById('warm-count').textContent='3';
+                  notice.innerHTML='<span data-en="">2 contacts have gone quiet — reminder sent</span><span data-zh="">2 個聯絡人已沉默——已發送提醒</span>';
+                  step=0; running=false;
+                  setTimeout(runAnim,3500);
+                },4000);
+              },1000);
+            }
+            highlight();
+          }
+          const ob = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)runAnim();});},{threshold:0.3});
+          const b = document.getElementById('kanban-board');
+          if(b) ob.observe(b);
+          setTimeout(runAnim, 2000);
+        })();
 
         function goToCheckout() {
             const addon = document.getElementById('addon-event');
