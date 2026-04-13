@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — WinePipeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #161310;
+  color: #e9e1db;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: rgba(22,19,16,0.95);
+  border-bottom: 1px solid rgba(255,179,181,0.1);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  font-family: 'Noto Serif', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffb3b5;
+  text-decoration: none;
+}
+.logo span {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(233,225,219,0.5);
+  font-weight: 400;
+}
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+.card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+.checkmark {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(128,0,32,0.15);
+  border: 1px solid rgba(255,179,181,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.checkmark svg {
+  width: 32px;
+  height: 32px;
+  stroke: #ffb3b5;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawCheck 0.4s ease 0.3s forwards;
+}
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffb3b5;
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.subtitle {
+  font-size: 17px;
+  color: rgba(233,225,219,0.7);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.steps {
+  background: rgba(255,179,181,0.05);
+  border: 1px solid rgba(255,179,181,0.1);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: left;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+.steps-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e7c267;
+  margin-bottom: 20px;
+}
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step:last-child { margin-bottom: 0; }
+.step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(128,0,32,0.3);
+  border: 1px solid rgba(255,179,181,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffb3b5;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-text {
+  font-size: 14px;
+  color: rgba(233,225,219,0.8);
+  line-height: 1.6;
+}
+.step-text strong {
+  color: #e9e1db;
+  font-weight: 600;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+.btn-primary {
+  display: inline-block;
+  background: #800020;
+  color: #ff828a;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+.contact-note {
+  font-size: 13px;
+  color: rgba(233,225,219,0.4);
+}
+.contact-note a {
+  color: #ffb3b5;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  padding: 24px 48px;
+  border-top: 1px solid rgba(255,179,181,0.08);
+  font-size: 12px;
+  color: rgba(233,225,219,0.3);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="https://winepipeline.mygrowthos.com" class="logo">
+    WinePipeline
+    <span>by MyGrowthOS</span>
+  </a>
+</header>
+
+<main>
+  <div class="card">
+
+    <div class="checkmark">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>You're in.</h1>
+
+    <p class="subtitle">
+      Your 7-day free trial has started.<br>
+      We'll have your WinePipeline account ready within 24 hours.
+    </p>
+
+    <div class="steps">
+      <div class="steps-title">What happens next</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Check your email</strong> — a confirmation has been sent to you with your trial details.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>We'll reach out within 24 hours</strong> to set up your account and walk you through your first pipeline.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Your 7-day trial begins now</strong> — no charge until the trial ends. Cancel anytime.</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="https://winepipeline.mygrowthos.com" class="btn-primary">← Back to WinePipeline</a>
+      <p class="contact-note">Questions? Email us at <a href="mailto:hello@mygrowthos.com">hello@mygrowthos.com</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>© 2026 WinePipeline · MyGrowthOS · Ahref Circle Limited</footer>
+
+</body>
+</html>
